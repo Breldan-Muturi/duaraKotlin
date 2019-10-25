@@ -44,7 +44,7 @@ class DashboardActivity : AppCompatActivity() {
         if (item != null) {
             if (item.itemId == R.id.logoutid) {
                 //Log out the user
-                FirebaseAgiuth.getInstance().signOut()
+                FirebaseAuth.getInstance().signOut()
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
             }

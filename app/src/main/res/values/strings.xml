@@ -50,5 +50,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="settings">Settings</string>
+    <string name="default_status">Hey there! I am using Duara!</string>
+    <string name="edit_profile_status">Edit Profile Status</string>
+    <string name="change_profile_photo">Change Profile Photo</string>
 
 </resources>
