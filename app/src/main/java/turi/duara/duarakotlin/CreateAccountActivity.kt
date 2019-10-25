@@ -66,7 +66,11 @@ class CreateAccountActivity : AppCompatActivity() {
 
                     mDatabase!!.setValue(userObject).addOnCompleteListener { task: Task<Void> ->
                         if (task.isSuccessful) {
-                            Toast.makeText(this, "User Created!", Toast.LENGTH_LONG).show()
+                            var dashboardIntent = Intent(this, DashboardActivity::class.java)
+                            dashboardIntent.putExtra("name", displayName)
+                            startActivity(dashboardIntent)
+                            finish()
+
 
                         } else {
 
@@ -86,5 +90,4 @@ class CreateAccountActivity : AppCompatActivity() {
 
 
     }
-
 }
