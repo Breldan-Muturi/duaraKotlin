@@ -1,4 +1,4 @@
-package turi.duara.duarakotlin
+package turi.duara.duarakotlin.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +10,7 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_main.*
+import turi.duara.duarakotlin.R
 
 class LoginActivity : AppCompatActivity() {
     var mAuth: FirebaseAuth? = null

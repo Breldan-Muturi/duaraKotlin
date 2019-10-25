@@ -1,4 +1,4 @@
-package turi.duara.duarakotlin
+package turi.duara.duarakotlin.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_create_account.*
+import turi.duara.duarakotlin.R
 
 class CreateAccountActivity : AppCompatActivity() {
     var mAuth: FirebaseAuth? = null

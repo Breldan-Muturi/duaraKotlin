@@ -1,19 +1,13 @@
-package turi.duara.duarakotlin
+package turi.duara.duarakotlin.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
-import com.google.android.gms.tasks.Task
-import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
 import kotlinx.android.synthetic.main.activity_main.*
+import turi.duara.duarakotlin.R
 
 class MainActivity : AppCompatActivity() {
     var mAuth: FirebaseAuth? = null
@@ -30,17 +24,17 @@ class MainActivity : AppCompatActivity() {
             user = firebaseAuth.currentUser
             if(user != null){
                 //lets go to dashboard
-                startActivity(Intent(this,DashboardActivity::class.java))
+                startActivity(Intent(this, DashboardActivity::class.java))
             } else{
                 Toast.makeText(this,"Not signed in", Toast.LENGTH_LONG).show()
             }
         }
         loginButton.setOnClickListener{
-            startActivity(Intent(this,LoginActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
         }
 
         createActButton.setOnClickListener{
-            startActivity(Intent(this,CreateAccountActivity::class.java))
+            startActivity(Intent(this, CreateAccountActivity::class.java))
         }
     }
 
