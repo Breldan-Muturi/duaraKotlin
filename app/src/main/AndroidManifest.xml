@@ -16,7 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.ProfileActivity"></activity>
+        <activity android:name=".activities.ChatActivity"></activity>
+        <activity android:name=".activities.ProfileActivity"
+                  android:parentActivityName=".activities.DashboardActivity"/>
         <activity android:name=".activities.StatusActivity" />
         <activity android:name=".activities.SettingsActivity" />
         <activity android:name=".activities.DashboardActivity" />

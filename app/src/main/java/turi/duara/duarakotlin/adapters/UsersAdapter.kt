@@ -13,6 +13,8 @@ import com.google.firebase.database.DatabaseReference
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
 import turi.duara.duarakotlin.R
+import turi.duara.duarakotlin.activities.ChatActivity
+import turi.duara.duarakotlin.activities.ProfileActivity
 import turi.duara.duarakotlin.models.Users
 
 class UsersAdapter(databaseQuery: DatabaseReference, var context: Context)
@@ -39,13 +41,23 @@ class UsersAdapter(databaseQuery: DatabaseReference, var context: Context)
                 if(i == 0){
                         //  Open User Profile
                     var profileIntent = Intent(context, ProfileActivity::class.java)
-                    
+                    profileIntent.putExtra("userId", userId)
+                    context.startActivity(profileIntent)
+
                 } else {
                     // Send Message
+                    var chatIntent = Intent(context, ChatActivity::class.java)
+                    chatIntent.putExtra("userId", userId)
+                    chatIntent.putExtra("name", userName)
+                    chatIntent.putExtra("status", userStat)
+                    chatIntent.putExtra("profile", profilePic)
+                    context.startActivity(chatIntent)
 
                 }
             })
-            Toast.makeText(context,"User row clicked $userId", Toast.LENGTH_LONG).show()
+
+            builder.show()
+//            Toast.makeText(context,"User row clicked $userId", Toast.LENGTH_LONG).show()
         }
 
     }
