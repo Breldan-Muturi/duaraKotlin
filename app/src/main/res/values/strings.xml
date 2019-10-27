@@ -53,5 +53,11 @@
     <string name="default_status">Hey there! I am using Duara!</string>
     <string name="edit_profile_status">Edit Profile Status</string>
     <string name="change_profile_photo">Change Profile Photo</string>
+    <string name="enter_your_status">Enter your Status</string>
+    <string name="status_hint">Status...</string>
+    <string name="update_status">Update Status</string>
+    <string name="add_new_status">Enter your new Status</string>
+    <string name="user_name">User Name</string>
+    <string name="user_status">User Status</string>
 
 </resources>
