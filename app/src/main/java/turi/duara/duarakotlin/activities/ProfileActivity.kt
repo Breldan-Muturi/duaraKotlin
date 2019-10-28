@@ -8,6 +8,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_profile.*
+import kotlinx.android.synthetic.main.users_row.*
 import turi.duara.duarakotlin.R
 
 class ProfileActivity : AppCompatActivity() {
@@ -30,6 +31,13 @@ class ProfileActivity : AppCompatActivity() {
                 .child(userId!!)
             setUpProfile()
         }
+
+        profileSendMessage.setOnClickListener {
+            var chatIntent = Intent(this, ChatActivity::class.java)
+            chatIntent.putExtra("userId", userId)
+            startActivity(chatIntent)
+        }
+
     }
 
     private fun setUpProfile() {

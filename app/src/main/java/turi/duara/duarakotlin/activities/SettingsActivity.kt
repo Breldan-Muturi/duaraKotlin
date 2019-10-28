@@ -45,14 +45,13 @@ class SettingsActivity : AppCompatActivity() {
 
         mDatabase!!.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                var displayName = dataSnapshot.child("display_name").value
+                var displayName = dataSnapshot.child("display_name").value.toString()
                 var image = dataSnapshot.child("image").value.toString()
-                var userStatus = dataSnapshot.child("status").value
+                var userStatus = dataSnapshot.child("status").value.toString()
                 var thumbnail = dataSnapshot.child("thumb_image").value
 
-                settingsDisplayName.text = displayName.toString()
-                settingsStatusText.text = userStatus.toString()
-
+                settingsDisplayName.text = displayName
+                settingsStatusText.text = userStatus
                 if (!image.equals("default")) {
                     Picasso.get().load(image)
                         .placeholder(R.drawable.default_avata)

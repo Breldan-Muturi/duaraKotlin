@@ -68,16 +68,16 @@ class UsersAdapter(databaseQuery: DatabaseReference, var context: Context)
         var userProfilePicLink: String? = null
         fun bindView (user: Users, context: Context){
             var userName = itemView.findViewById<TextView>(R.id.userName)
-            var userStatus = itemView.findViewById<TextView>(R.id.userStatus)
+            val userStatus = itemView.findViewById<TextView>(R.id.userStatus)
             var userProfilePic = itemView.findViewById<CircleImageView>(R.id.usersProfile)
 
 //        Set the strings so we can pass in the intent
             userNameTxt = user.display_name
-            userStatusTxt = user.user_status
+            userStatusTxt = user.status
             userProfilePicLink = user.thumb_image
 
             userName.text = user.display_name
-            userStatus.text = user.user_status
+            userStatus.text = user.status
 
             Picasso.get().load(userProfilePicLink)
                 .placeholder(R.drawable.default_avata)
