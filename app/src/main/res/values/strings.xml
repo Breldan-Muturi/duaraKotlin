@@ -43,7 +43,6 @@
     <string name="have_account">Already Have Account</string>
     <string name="need_account">Need a New Account?</string>
     <string name="create_act">Create a New Account</string>
-    <string name="display_name">Display Name</string>
     <string name="enter_email">Enter Email</string>
     <string name="password">Password</string>
 
@@ -61,5 +60,6 @@
     <string name="user_status">User Status</string>
     <string name="message">Message</string>
     <string name="name_of_messenger">Name of messenger</string>
+    <string name="display_name">Display Name</string>
 
 </resources>

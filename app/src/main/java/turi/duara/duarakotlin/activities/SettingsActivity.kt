@@ -36,6 +36,8 @@ class SettingsActivity : AppCompatActivity() {
         mCurrentUser = FirebaseAuth.getInstance().currentUser
         mStorageRef = FirebaseStorage.getInstance().reference
 
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
         var userId = mCurrentUser!!.uid
         mDatabase = FirebaseDatabase.getInstance().reference
             .child("Users")

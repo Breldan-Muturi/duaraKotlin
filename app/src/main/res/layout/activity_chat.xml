@@ -22,7 +22,7 @@
     <LinearLayout
         android:layout_alignParentBottom="true"
         android:weightSum="10"
-        android:layout_alignParentLeft="true"
+        android:layout_margin="8dp"
         android:layout_alignParentStart="true"
         android:background="@color/grey_100"
         android:id="@+id/linearLayout"

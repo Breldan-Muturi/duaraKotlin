@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.TestLooperManager
 import android.view.Gravity
+import android.view.LayoutInflater
 import android.view.TextureView
 import android.view.View
 import android.widget.TextView
@@ -17,6 +18,8 @@ import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_chat.*
+import kotlinx.android.synthetic.main.custom_bar_image.*
+import kotlinx.android.synthetic.main.custom_bar_image.view.*
 import org.w3c.dom.Text
 import turi.duara.duarakotlin.R
 import turi.duara.duarakotlin.models.FriendlyMessage
@@ -34,11 +37,17 @@ class ChatActivity : AppCompatActivity() {
 
         mFirebaseUser = FirebaseAuth.getInstance().currentUser
         userId = intent.extras!!.getString("userId").toString()
+        var profileImgLink = intent!!.extras!!.get("profile").toString()
         mLinearLayoutManager = LinearLayoutManager(this)
         mLinearLayoutManager!!.stackFromEnd = true
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-
+        supportActionBar!!.setDisplayShowCustomEnabled(true)
+        var inflater = this.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        var actionBarView = inflater.inflate(R.layout.custom_bar_image, null)
+        actionBarView.customBarName.text = intent!!.extras!!.getString("name")
+        Picasso.get().load(profileImgLink).placeholder(R.drawable.default_avata).into(actionBarView.customBarCircleImage)
+        supportActionBar!!.customView = actionBarView
 
         mFirebaseDatabaseReference  = FirebaseDatabase.getInstance().reference
         mFirebaseAdapter = object : FirebaseRecyclerAdapter<FriendlyMessage,
@@ -65,9 +74,9 @@ class ChatActivity : AppCompatActivity() {
                             .child(currentUserId)
                             .addValueEventListener(object : ValueEventListener{
                                 override fun onDataChange(data: DataSnapshot) {
-                                    var imageUrl = data!!.child("thumb_image").toString()
-                                    var displayName = data!!.child("display_name")
-                                    viewHolder.messengerTextView!!.text = displayName.toString()
+                                    var imageUrl = data!!.child("thumb_image").value.toString()
+                                    var displayName = data!!.child("display_name").value.toString()
+                                    viewHolder.messengerTextView!!.text = "I wrote ..."
                                     Picasso.get().load(imageUrl)
                                         .placeholder(R.drawable.default_avata)
                                         .into(viewHolder.profileImageViewRight)
@@ -90,12 +99,12 @@ class ChatActivity : AppCompatActivity() {
                             .child(userId!!)
                             .addValueEventListener(object : ValueEventListener{
                                 override fun onDataChange(data: DataSnapshot) {
-                                    var imageUrl = data!!.child("thumb_image").toString()
-                                    var displayName = data!!.child("display_name")
-                                    viewHolder.messengerTextView!!.text = displayName.toString()
+                                    var imageUrl = data!!.child("thumb_image").value.toString()
+                                    var displayName = data!!.child("display_name").value.toString()
+                                    viewHolder.messengerTextView!!.text = "$displayName wrote ..."
                                     Picasso.get().load(imageUrl)
                                         .placeholder(R.drawable.default_avata)
-                                        .into(viewHolder.profileImageViewRight)
+                                        .into(viewHolder.profileImageView)
 
                                 }
 
