@@ -45,4 +45,5 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-database:2.1.1'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.firebase:firebase-ads:18.2.0'
 }

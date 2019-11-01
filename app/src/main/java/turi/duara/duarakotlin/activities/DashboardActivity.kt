@@ -7,8 +7,11 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_dashboard.*
+import kotlinx.android.synthetic.main.fragment_chats.*
 import turi.duara.duarakotlin.R
 import turi.duara.duarakotlin.adapters.SectionPagerAdapter
 
@@ -20,6 +23,14 @@ class DashboardActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard)
+        MobileAds.initialize(this,"ca-app-pub-4086130289404832~8596378388")
+        val adRequest = AdRequest.Builder().build()
+
+        adView.loadAd(adRequest)
+
+        loadInterstitialButton.setOnClickListener{
+
+        }
         supportActionBar!!.title = "Home"
         sectionAdapter = SectionPagerAdapter(supportFragmentManager)
         dashViewPagerId.adapter = sectionAdapter
