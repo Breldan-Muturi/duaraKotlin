@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+<menu
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/logoutid"
-        android:title="@string/logout" />
+        android:id="@+id/AdsId"
+        android:title="@string/see_ads" />
     <item
         android:id="@+id/settingsId"
         android:title="@string/settings" />
+    <item
+        android:id="@+id/eventTriggerButton"
+        android:title="@string/trigger" />
+    <item
+        android:id="@+id/logoutid"
+        android:title="@string/logout" />
 </menu>

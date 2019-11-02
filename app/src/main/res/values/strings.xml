@@ -61,7 +61,15 @@
     <string name="message">Message</string>
     <string name="name_of_messenger">Name of messenger</string>
     <string name="display_name">Display Name</string>
-    <string name="banner_ad_unit_id">ca-app-pub-39402566099942544/6300978111</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/2934735716</string>
     <string name="show_ad">Show Ad</string>
-
+    <string name="share">share</string>
+    <string name="receive">Receive</string>
+    <string name="linkreceive">linkReceive</string>
+    <string name="send">Send</string>
+    <string name="linksend">linkSend</string>
+    <string name="trigger">Trigger</string>
+    <string name="see_ads">See Ads</string>
+    <string name="warning_fresh_install">You may need to background and then re-foreground the app after a fresh install.</string>
+    <string name="instance_id_fmt">Device Instance ID: %s</string>
 </resources>
